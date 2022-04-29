@@ -36,9 +36,10 @@ public class InMemoryTransactionDAO implements TransactionDAO {
     }
 
     @Override
-    public void logTransaction(Date date, String accountNo, ExpenseType expenseType, double amount) {
+    public boolean logTransaction(Date date, String accountNo, ExpenseType expenseType, double amount) {
         Transaction transaction = new Transaction(date, accountNo, expenseType, amount);
         transactions.add(transaction);
+        return false;
     }
 
     @Override

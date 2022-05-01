@@ -20,7 +20,7 @@ public class DataBaseUtil extends SQLiteOpenHelper {
             "transaction_id";
 
     public DataBaseUtil(@Nullable Context context) {
-        super(context, "expense-manager-db.db",null, 1);
+        super(context, "190116U.db",null, 1);
     }
 
     @Override

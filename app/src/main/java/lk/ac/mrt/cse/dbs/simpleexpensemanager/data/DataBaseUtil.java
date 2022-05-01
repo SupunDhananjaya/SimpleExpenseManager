@@ -36,7 +36,8 @@ public class DataBaseUtil extends SQLiteOpenHelper {
                 COL_ACCOUNT_NO + " TEXT," +
                 COL_TYPE + " INTEGER," +
                 COL_TRANSACTION_DATE + " TEXT," +
-                COL_AMOUNT + " REAL );";
+                COL_AMOUNT + " REAL, " +
+                "CONSTRAINT fk_accounts FOREIGN KEY (" + COL_ACCOUNT_NO + ") REFERENCES " + TABLE_ACCOUNT + "(" + COL_ACCOUNT_NO +") ON DELETE CASCADE);";
 
         String insert1 = "INSERT INTO " + TABLE_ACCOUNT + " VALUES('12345A','Anakin Skywalker','Yoda Bank',10000.0);";
         String insert2 = "INSERT INTO " + TABLE_ACCOUNT + " VALUES('78945Z','Obi-Wan Kenobi','Clone BC',80000.0);";
